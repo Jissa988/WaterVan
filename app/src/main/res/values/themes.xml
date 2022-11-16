@@ -1,0 +1,34 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    //Disable Dark Theme in app
+<!--    <style name="Theme.DarkTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">-->
+<!--    <style name="Theme.WaterVan" parent="Theme.AppCompat.Light.NoActionBar">-->
+    <style name="Theme.waterVan" parent="Theme.AppCompat.Light.NoActionBar">
+        parent="Theme.MaterialComponents.Light.NoActionBar"
+        <!-- Primary brand color. -->
+<!--        <item name="colorPrimary">@null</item>-->
+       <item name="colorPrimary">@color/maroon</item>
+        <item name="colorPrimaryVariant">@color/maroon</item>
+        <item name="colorOnPrimary">@color/white</item>
+<!--        <item name="backgroundTint">@null</item>-->
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        //API 29 and above (While Pasting the code delete this comment)
+
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+    </style>
+    <style name="Theme.waterVan.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+    <style name="Theme.WaterVan.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.WaterVan.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

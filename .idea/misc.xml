@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/VanSale/app/src/main/res/drawable-v24/ic_baseline_add_box_24.xml" value="0.139" />
+        <entry key="..\:/VanSale/app/src/main/res/drawable-v24/ic_baseline_indeterminate_check_box_24.xml" value="0.1035" />
+        <entry key="..\:/VanSale/app/src/main/res/drawable/badgeicon.xml" value="0.1415" />
+        <entry key="..\:/VanSale/app/src/main/res/layout/activity_customers_outstanding_list.xml" value="0.184375" />
+        <entry key="..\:/VanSale/app/src/main/res/layout/activity_homepage.xml" value="0.1534090909090909" />
+        <entry key="..\:/VanSale/app/src/main/res/layout/activity_login.xml" value="0.184375" />
+        <entry key="..\:/VanSale/app/src/main/res/layout/activity_payment.xml" value="0.16354166666666667" />
+        <entry key="..\:/VanSale/app/src/main/res/layout/activity_pending_collection.xml" value="0.13125" />
+        <entry key="..\:/VanSale/app/src/main/res/layout/activity_product_sale.xml" value="0.16354166666666667" />
+        <entry key="..\:/VanSale/app/src/main/res/layout/activity_sale_bill.xml" value="0.16140350877192983" />
+        <entry key="..\:/VanSale/app/src/main/res/layout/activity_sales.xml" value="0.16354166666666667" />
+        <entry key="..\:/VanSale/app/src/main/res/layout/customer_outstanding_recycler_list.xml" value="0.18229166666666666" />
+        <entry key="..\:/VanSale/app/src/main/res/layout/customer_recycler_list.xml" value="0.16354166666666667" />
+        <entry key="..\:/VanSale/app/src/main/res/layout/do_bill_recycler_list.xml" value="0.10833333333333334" />
+        <entry key="..\:/VanSale/app/src/main/res/layout/include_main_contant.xml" value="0.1534090909090909" />
+        <entry key="..\:/VanSale/app/src/main/res/layout/pending_collection_recycler.xml" value="0.13125" />
+        <entry key="..\:/VanSale/app/src/main/res/layout/product_recycler_list.xml" value="0.16666666666666666" />
+        <entry key="..\:/VanSale/app/src/main/res/layout/sale_bill_recycler_list.xml" value="0.14666666666666667" />
+        <entry key="..\:/VanSale/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.16354166666666667" />
+        <entry key="..\:/VanSale/app/src/main/res/menu/menu_drawer.xml" value="0.16354166666666667" />
+        <entry key="..\:/VanSale/app/src/main/res/menu/search_menu.xml" value="0.184375" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable-v24/ic_baseline_add_box_24.xml" value="0.128" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable-v24/ic_baseline_indeterminate_check_box_24.xml" value="0.128" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable-v24/ic_home_black_24dp.xml" value="0.102" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.107" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/action_button.xml" value="0.1645" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/bottom_navigation_color.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/button.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/eye_close.xml" value="0.11" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/eye_open.xml" value="0.11" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/eye_password.xml" value="0.11" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/gradient_color_sales_background.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/ic_assistant_black_24dp.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/ic_baseline_access_time_filled_24.xml" value="0.1035" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.107" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/ic_baseline_attach_money_24.xml" value="0.102" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/ic_baseline_cancel_24.xml" value="0.107" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/ic_baseline_directions_car_24.xml" value="0.115" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/ic_baseline_location_on_24.xml" value="0.107" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/ic_baseline_minimize_24.xml" value="0.107" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/ic_baseline_money_24.xml" value="0.102" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/ic_baseline_money_512.xml" value="0.102" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/ic_baseline_notifications_24.xml" value="0.107" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.107" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.107" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/ic_baseline_shopping_cart_24.xml" value="0.102" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/ic_baseline_shopping_cart_32.xml" value="0.102" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/ic_launcher_background.xml" value="0.107" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/password.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/round_button.xml" value="0.172" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/skip_button.xml" value="0.1645" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/textview.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/toggle_button.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/drawable/toggle_track.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/activity_customers_outstanding_list.xml" value="0.15670289855072464" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/activity_dobill.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/activity_docustomers_view.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/activity_doproduct_view.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/activity_dosale_mode.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/activity_home_page.xml" value="0.16666666666666666" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/activity_homepage.xml" value="0.22" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/activity_payment.xml" value="0.3333333333333333" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/activity_payment2.xml" value="0.22" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/activity_pending_collection.xml" value="0.14666666666666667" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/activity_product_sale.xml" value="0.15353260869565216" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/activity_sale_bill.xml" value="0.16666666666666666" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/activity_sales.xml" value="0.30869565217391304" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/activity_splash.xml" value="0.18206521739130435" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/adapter.xml" value="0.1371794871794872" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/background.xml" value="0.13043478260869565" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/content_payment.xml" value="0.4466666666666667" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/customer_outstanding_recycler_list.xml" value="0.3333333333333333" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/customer_recycler_list.xml" value="0.3111111111111111" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/do_bill_recycler_list.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/docustomer_recycler_list.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/doproduct_recycler_list.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/fragment_adapter.xml" value="0.16666666666666666" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/fragment_fifth.xml" value="0.12916666666666668" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/fragment_fourth.xml" value="0.12916666666666668" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/fragment_home.xml" value="0.14322916666666666" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/fragment_third.xml" value="0.12916666666666668" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/fragment_two.xml" value="0.14322916666666666" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/header_drawer.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/homepage_recycler_list.xml" value="0.1480978260869565" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/include_main_contant.xml" value="0.25" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/item.xml" value="0.10364583333333334" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/pending_collection_recycler.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/product_recycler_list.xml" value="0.36129032258064514" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/sale_bill_recycler_list.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/layout/trip_open_pop.xml" value="0.3333333333333333" />
+        <entry key="..\:/WaterVan/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.22" />
+        <entry key="..\:/WaterVan/app/src/main/res/menu/menu_drawer.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/menu/search_menu.xml" value="0.184375" />
+        <entry key="..\:/WaterVan/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
+        <entry key="..\:/WaterVan/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.22" />
+      </ProjectState>
+    </option>
+  </component>
+</project>

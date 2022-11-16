@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical"
+
+    >
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true"
+        android:padding="10dp"
+        app:cardCornerRadius="20dp"
+        android:background="@color/white"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="5"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="3"
+                android:weightSum="3"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/pro_name"
+                    android:text="5 Gallon water bottle"
+                    android:drawableLeft="@drawable/bottle_outline16"
+                    android:drawablePadding="10dp"
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="05dp">
+
+                </TextView>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:weightSum="2"
+                    android:layout_marginBottom="05dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/stock"
+                        android:text="Stock-210 PCS"
+                        android:drawableLeft="@drawable/stock_outline16"
+                        android:drawablePadding="10dp"
+                        android:layout_gravity="center"
+                        android:gravity="left"
+                        android:layout_weight="1"
+                        android:layout_marginRight="10dp">
+
+                    </TextView>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rate"
+                        android:text="Rate-6 AED"
+                        android:gravity="right"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:layout_marginLeft="10dp">
+
+                    </TextView>
+                </LinearLayout>
+                <view class="android.widget.TextView"
+                    android:layout_height="1dp"
+                    android:layout_width="match_parent"
+                    android:background="@color/view_color"
+                    android:layout_margin="10dp"
+                    >
+                </view>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:weightSum="3"
+                    android:layout_marginBottom="05dp">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="left"
+                        android:text="Sale Qty"
+                        android:drawableLeft="@drawable/quantity_outline16"
+                        android:drawablePadding="10dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1">
+
+                    </TextView>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:orientation="horizontal"
+                        android:weightSum="3">
+                        <!--                       <Button-->
+                        <!--                           android:id="@+id/sale_minus"-->
+                        <!--                           android:layout_width="match_parent"-->
+                        <!--                           android:layout_height="40dp"-->
+
+                        <!--                           android:background="@drawable/minus"-->
+                        <!--                           android:layout_gravity="center"-->
+                        <!--                           android:layout_weight="1">-->
+
+                        <!--                       </Button>-->
+                        <ImageView
+                            android:id="@+id/sale_minus"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/ic_baseline_indeterminate_check_box_24" />
+                        <EditText
+                            android:id="@+id/sale_edit"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:text="0"
+                            android:textSize="10dp"
+                            android:gravity="center"
+                            android:layout_weight="1">
+
+                        </EditText>
+                        <!--                       <Button-->
+                        <!--                           android:id="@+id/sale_plus"-->
+                        <!--                           android:layout_width="match_parent"-->
+                        <!--                           android:layout_height="40dp"-->
+
+                        <!--                           android:background="@drawable/plus"-->
+                        <!--                           android:layout_gravity="center"-->
+                        <!--                           android:layout_weight="1">-->
+
+                        <!--                       </Button>-->
+                        <ImageView
+                            android:id="@+id/sale_plus"
+                            android:layout_width="match_parent"
+                            android:layout_height="35dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/ic_baseline_add_box_24" />
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_weight="1"
+                android:weightSum="3"
+                android:layout_marginBottom="10dp">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="FOC"
+                    android:gravity="left"
+                    android:drawableLeft="@drawable/quantity_outline16"
+                    android:drawablePadding="10dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1">
+
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+                    <!--                    <Button-->
+                    <!--                        android:id="@+id/focminus"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="40dp"-->
+                    <!--                        android:background="@drawable/minus"-->
+                    <!--                       android:layout_gravity="center"-->
+                    <!--                        android:layout_weight="1">-->
+
+                    <!--                    </Button>-->
+                    <ImageView
+                        android:id="@+id/focminus"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_baseline_indeterminate_check_box_24" />
+                    <EditText
+                        android:id="@+id/focedit"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:text="0"
+                        android:textSize="10dp"
+                        android:gravity="center"
+                        android:layout_weight="1">
+
+                    </EditText>
+                    <!--                    <Button-->
+                    <!--                        android:id="@+id/focplus"-->
+                    <!--                        android:layout_width="match_parent"-->
+                    <!--                        android:layout_height="40dp"-->
+                    <!--                        android:background="@drawable/plus"-->
+                    <!--                        android:layout_gravity="center"-->
+                    <!--                        android:layout_weight="1">-->
+
+                    <!--                    </Button>-->
+                    <ImageView
+                        android:id="@+id/focplus"
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:layout_weight="1"
+                        app:srcCompat="@drawable/ic_baseline_add_box_24" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Sale.PaymentActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:text="Sale Mode"
+        >
+
+    </TextView>
+    <view class="android.widget.TextView"
+        android:layout_height="1dp"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:background="@color/view_color"
+        >
+    </view>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardUseCompatPadding="true"
+        android:padding="10dp"
+        app:cardCornerRadius="10dp"
+        android:background="@color/white"
+        android:layout_margin="10dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:weightSum="5"
+            android:padding="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="3"
+                android:weightSum="3"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cust_name"
+                    android:text="Alexander lll of Macadon"
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/user_ouline16"
+                    android:drawablePadding="10dp"
+                    android:layout_marginBottom="10dp">
+
+                </TextView>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cust_mobile"
+                    android:text="+91 3265987410"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/telephone_outline16"
+                    android:drawablePadding="10dp"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="10dp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cust_adress"
+                    android:text="B15,local area"
+                    android:layout_gravity="center"
+                    android:drawableLeft="@drawable/location_outline16"
+                    android:drawablePadding="10dp"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="10dp">
+
+                </TextView>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_margin="10dp">
+        <CheckBox android:id="@+id/newcus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="New"
+            />
+        <CheckBox android:id="@+id/repeat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Repeat"
+            />
+        <CheckBox android:id="@+id/temp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Temporay"/>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:weightSum="2">
+        <Button
+            android:id="@+id/pay_back"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/skip_button"
+            android:text="Back"
+            android:textColor="@color/start_color"
+            android:layout_weight="1"
+            android:layout_marginRight="10dp"
+            android:textAllCaps="false">
+
+        </Button>
+
+        <Button
+            android:id="@+id/pay_proceed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/action_button"
+            android:textColor="@color/white"
+            android:text="Proceed"
+            android:textAllCaps="false">
+
+        </Button>
+
+
+    </LinearLayout>
+
+</LinearLayout>

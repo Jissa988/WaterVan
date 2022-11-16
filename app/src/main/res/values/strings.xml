@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">Van Sale</string>
+
+    <string name="no_internet_text">Please check your Internet connection and try again</string>
+    <string name="show_pwd">Show Password</string>
+    <string name="hide_pwd">Hide Password</string>
+    <string name="forget_password_text">Enter the registered email address \nWe will send you a OTP to your\nmobile number</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="press_again_exit_app">Press again to exit</string>
+    <string name="no_item">No Item</string>
+    <string name="Logout">Logout</string>
+    <string name="CANCEL">CANCEL</string>
+    <string name="OK">OK</string>
+    <string name="TRY_AGAIN">TRY AGAIN</string>
+    <string name="msg_failed_load_data">Failed when load data</string>
+    <string name="msg_failed">Failed.</string>
+    <string name="msg_alrdy">You are currently selling this product.</string>
+    <string name="msg_ss_pin">Successfully added delivery area.</string>
+    <string name="msg_ss_invoice">We have send invoice to your email address.\n\nCheck after 5 minutes.</string>
+    <string name="msg_ss">Thank you..!Your request has been send successfully,Approval details will be updated.After that Start adding your stock.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_1">Cash</string>
+    <string name="text_1">7678689</string>
+    <string name="text_2">09887876</string>
+    <string name="text_3">9877</string>
+    <string name="text_4">15</string>
+    <string name="title_2">Credit</string>
+    <string name="title_3">Coupon</string>
+    <string name="title_4">Collection</string>
+    <string name="title_activity_payment">PaymentActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+</resources>

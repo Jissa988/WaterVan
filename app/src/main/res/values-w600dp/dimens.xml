@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="bottom_navigation_heights">50dp</dimen>
+    <dimen name="space_between_card_and_navheader">1dp</dimen>
+    <dimen name="home_recycler_height">80dp</dimen>
+</resources>

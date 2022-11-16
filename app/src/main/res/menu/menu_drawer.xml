@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/open_shift"
+            android:icon="@drawable/insta"
+            android:title="Open shift" />
+
+        <item
+            android:id="@+id/closing_shift"
+            android:icon="@drawable/insta"
+            android:title="Closing shift" />
+        <item
+            android:id="@+id/cust"
+            android:icon="@drawable/insta"
+            android:title="Customers" />
+        <item
+            android:id="@+id/sale"
+            android:icon="@drawable/insta"
+            android:title="Sales" />
+        <item
+            android:id="@+id/collect"
+            android:icon="@drawable/insta"
+            android:title="Collections" />
+        <item
+            android:id="@+id/empty_can"
+            android:icon="@drawable/insta"
+            android:title="Empty container" />
+        <item
+            android:id="@+id/depo"
+            android:icon="@drawable/insta"
+            android:title="Deposit" />
+        <item
+            android:id="@+id/depo_ret"
+            android:icon="@drawable/insta"
+            android:title="Deposit return" />
+        <item
+            android:id="@+id/load"
+            android:icon="@drawable/insta"
+            android:title="Loading" />
+        <item
+            android:id="@+id/unload"
+            android:icon="@drawable/insta"
+            android:title="Unloading" />
+        <item
+            android:id="@+id/sale_re"
+            android:icon="@drawable/insta"
+            android:title="Sales return" />
+
+        <item
+            android:id="@+id/coup"
+            android:icon="@drawable/insta"
+            android:title="Coupon" />
+        <item
+            android:id="@+id/rep"
+            android:icon="@drawable/insta"
+            android:title="Reports" />
+
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/password"
+            android:title="Logout" />
+
+    </group>
+
+
+</menu>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Item checked -->
+<!--    <item android:color="@color/colorPrimaryDark" android:state_checked="true" />-->
+<!--    &lt;!&ndash; Item pressed &ndash;&gt;-->
+<!--    <item android:color="@color/colorAccent" android:state_pressed="true" />-->
+<!--    &lt;!&ndash; Item default &ndash;&gt;-->
+<!--    <item android:color="@color/colorPrimaryDark" />-->
+
+    <item android:color="#fff" android:state_checked="true" />
+    <!-- Item pressed -->
+    <item android:color="#0000" android:state_pressed="true" />
+    <!-- Item default -->
+    <item android:color="@color/black" />
+</selector>
