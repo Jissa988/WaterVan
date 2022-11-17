@@ -30,31 +30,31 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class SaleBillActivity extends AppCompatActivity  {
+public class SaleBillActivity extends AppCompatActivity {
     ProductAdapter productAdapter;
     SaleBillAdapter saleBillAdapter;
     Button back_button;
     Spinner spinner;
     RecyclerView sale_bill_recyclerview;
-    int cust_id,fin_id,strx_id,pay_id;
+    int cust_id, fin_id, strx_id, pay_id;
     String payment_type;
     private TokenSharedPreference tokenSharedPreference;
     String token;
     List<SalesResponse> custview;
     List<ProductList> list;
     TextView payment_mode;
-  ProductListArray product_view;
-    TextView name,phn,address,saleTotal,total_amount;
+    ProductListArray product_view;
+    TextView name, phn, address, saleTotal, total_amount;
     EditText round_value;
-    ImageView plus_button,minus_button;
+    ImageView plus_button, minus_button;
     Button save;
-    int i=0;
+    int i = 0;
     double toal_sale;
     String date;
     String round_offtype;
-    double gross_amount=0,total_tax=0,net_amount=0,round_amount=0;
-     List<SaleBillProductRequest> product_request=new ArrayList<>();
-     SaleBillProductRequestArray saleBillProductRequestArray;
+    double gross_amount = 0, total_tax = 0, net_amount = 0, round_amount = 0;
+    List<SaleBillProductRequest> product_request = new ArrayList<>();
+    SaleBillProductRequestArray saleBillProductRequestArray;
 //    List<SalesResponse> custemer;
 //    List<ProductList> product;
 
@@ -65,70 +65,68 @@ public class SaleBillActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_sale_bill);
         tokenSharedPreference = new TokenSharedPreference(this);
         token = tokenSharedPreference.Gettoken();
-        cust_id=(getIntent().getExtras().getInt("custid"));
-        fin_id=(getIntent().getExtras().getInt("finid"));
-        strx_id=(getIntent().getExtras().getInt("strxid"));
-        pay_id=(getIntent().getExtras().getInt("payid"));
-        spinner=findViewById(R.id.round_spinner);
+        cust_id = (getIntent().getExtras().getInt("custid"));
+        fin_id = (getIntent().getExtras().getInt("finid"));
+        strx_id = (getIntent().getExtras().getInt("strxid"));
+        pay_id = (getIntent().getExtras().getInt("payid"));
+        spinner = findViewById(R.id.round_spinner);
 
-         date = String.valueOf(android.text.format.DateFormat.format("dd-MMM-yyyy", new java.util.Date()));
-        Log.v("water", "------------SaleBillActivity-------------date---------"+date );
+        date = String.valueOf(android.text.format.DateFormat.format("dd-MMM-yyyy", new java.util.Date()));
+        Log.v("water", "------------SaleBillActivity-------------date---------" + date);
 
 
-        Log.v("water", "------------SaleBillActivity-------------cust_id---------"+cust_id );
-        Log.v("water", "------------SaleBillActivity-------------fin_id---------"+fin_id );
-        Log.v("water", "------------SaleBillActivity-------------strx_id---------"+strx_id );
-        Log.v("water", "------------SaleBillActivity-------------pay_id---------"+pay_id );
-        if(pay_id==1){
-            payment_type="Cash";
+        Log.v("water", "------------SaleBillActivity-------------cust_id---------" + cust_id);
+        Log.v("water", "------------SaleBillActivity-------------fin_id---------" + fin_id);
+        Log.v("water", "------------SaleBillActivity-------------strx_id---------" + strx_id);
+        Log.v("water", "------------SaleBillActivity-------------pay_id---------" + pay_id);
+        if (pay_id == 1) {
+            payment_type = "Cash";
+        } else if (pay_id == 2) {
+            payment_type = "Credit";
         }
-        else if(pay_id==2){
-            payment_type="Credit";
-        }
 
-        save=findViewById(R.id.save_button);
-        name=findViewById(R.id.billcust_name);
-        phn=findViewById(R.id.billcust_mobile);
-        address=findViewById(R.id.billcust_adress);
-        saleTotal=findViewById(R.id.total);
+        save = findViewById(R.id.save_button);
+        name = findViewById(R.id.billcust_name);
+        phn = findViewById(R.id.billcust_mobile);
+        address = findViewById(R.id.billcust_adress);
+        saleTotal = findViewById(R.id.total);
 
-        total_amount=findViewById(R.id.total_amount_text);
-        back_button=findViewById(R.id.back_button);
+        total_amount = findViewById(R.id.total_amount_text);
+        back_button = findViewById(R.id.back_button);
 
-        round_value=findViewById(R.id.round_amount);
-        payment_mode=findViewById(R.id.pay_term);
+        round_value = findViewById(R.id.round_amount);
+        payment_mode = findViewById(R.id.pay_term);
         payment_mode.setText(payment_type);
 
 
-         list=ProductAdapter.arraylist;
-        custview=SalesActivity.customerlist;
-        if(custview.isEmpty()){
-            Log.v("water", "-------------------------SaleBillActivity-----custview is empty----" );
-        }else{
-            int count1=custview.size();
-            Log.v("water", "-------------------------SaleBillActivity-----count1----"+count1 );
+        list = ProductAdapter.arraylist;
+        custview = SalesActivity.customerlist;
+        if (custview.isEmpty()) {
+            Log.v("water", "-------------------------SaleBillActivity-----custview is empty----");
+        } else {
+            int count1 = custview.size();
+            Log.v("water", "-------------------------SaleBillActivity-----count1----" + count1);
         }
 
-        int count=list.size();
+        int count = list.size();
 
-        Log.v("water", "-------------------------SaleBillActivity-----count----"+count );
+        Log.v("water", "-------------------------SaleBillActivity-----count----" + count);
 
 
-            for (SalesResponse salesResponse : custview) {
-                if (salesResponse.getCustomerId() == cust_id) {
-                    String custname = salesResponse.getCustomerName();
-                    name.setText(custname);
-                    String addres = salesResponse.getOfficeAddress();
-                    address.setText(addres);
-                    String phns = salesResponse.getCompanyPhone();
-                    phn.setText(phns);
-                }
-
+        for (SalesResponse salesResponse : custview) {
+            if (salesResponse.getCustomerId() == cust_id) {
+                String custname = salesResponse.getCustomerName();
+                name.setText(custname);
+                String addres = salesResponse.getOfficeAddress();
+                address.setText(addres);
+                String phns = salesResponse.getCompanyPhone();
+                phn.setText(phns);
             }
 
+        }
 
 
-        Log.v("water", "SaleBillActivity-----product_view.size();-------------" +list);
+        Log.v("water", "SaleBillActivity-----product_view.size();-------------" + list);
 
 
         List<String> list = new ArrayList<String>();
@@ -138,20 +136,14 @@ public class SaleBillActivity extends AppCompatActivity  {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, list);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        round_offtype=  spinner.getSelectedItem().toString();
+        round_offtype = spinner.getSelectedItem().toString();
 
 
         recyclerviews();
         salescounts();
 
 
-
-
-
-
-
-
-        Log.v("water", "-----------SaleBillActivity--------------toal_sale---------"+toal_sale);
+        Log.v("water", "-----------SaleBillActivity--------------toal_sale---------" + toal_sale);
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -192,10 +184,10 @@ public class SaleBillActivity extends AppCompatActivity  {
                 Log.v("water", "SaleBillActivity----onBackPressed-------------");
 
                 Intent intent = new Intent(SaleBillActivity.this, ProductSaleActivity.class);
-        intent.putExtra("custid",cust_id);
-        intent.putExtra("fincialid",fin_id);
-        intent.putExtra("strx_id",strx_id);
-        intent.putExtra("payid",pay_id);
+                intent.putExtra("custid", cust_id);
+                intent.putExtra("fincialid", fin_id);
+                intent.putExtra("strx_id", strx_id);
+                intent.putExtra("payid", pay_id);
 
 
                 startActivity(intent);
@@ -203,20 +195,18 @@ public class SaleBillActivity extends AppCompatActivity  {
         });
 
 
-
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                round_offtype= spinner.getSelectedItem().toString();
-                round_amount=Double.parseDouble(String.valueOf(round_value.getText()));
-                String nettotal_string= String.valueOf(saleTotal.getText());
+                round_offtype = spinner.getSelectedItem().toString();
+                round_amount = Double.parseDouble(String.valueOf(round_value.getText()));
+                String nettotal_string = String.valueOf(saleTotal.getText());
                 String[] parts = nettotal_string.split("Net Total :");
                 double net_rate = Double.parseDouble(parts[1]);
-                if(round_offtype.equals("+")) {
+                if (round_offtype.equals("+")) {
                     net_amount = round_amount + net_rate;
-                }
-                else if(round_offtype.equals("-")){
-                    net_amount = net_rate-round_amount;
+                } else if (round_offtype.equals("-")) {
+                    net_amount = net_rate - round_amount;
                 }
 
 
@@ -242,16 +232,15 @@ public class SaleBillActivity extends AppCompatActivity  {
             public void afterTextChanged(Editable s) {
 
 
-                round_offtype= spinner.getSelectedItem().toString();
-                round_amount=Double. parseDouble(String.valueOf(s));
-                String nettotal_string= String.valueOf(saleTotal.getText());
+                round_offtype = spinner.getSelectedItem().toString();
+                round_amount = Double.parseDouble(String.valueOf(s));
+                String nettotal_string = String.valueOf(saleTotal.getText());
                 String[] parts = nettotal_string.split("Net Total :");
                 double net_rate = Double.parseDouble(parts[1]);
-                if(round_offtype.equals("+")) {
+                if (round_offtype.equals("+")) {
                     net_amount = round_amount + net_rate;
-                }
-                else if(round_offtype.equals("-")){
-                    net_amount = net_rate-round_amount;
+                } else if (round_offtype.equals("-")) {
+                    net_amount = net_rate - round_amount;
                 }
 
             }
@@ -260,19 +249,16 @@ public class SaleBillActivity extends AppCompatActivity  {
     }
 
 
-
-    public void onBackPressed () {
-      //  super.onBackPressed();
+    public void onBackPressed() {
+        //  super.onBackPressed();
 
     }
-
-
 
 
     public void recyclerviews() {
 
 
-                Log.v("water", "SaleBillActivity-----recyclerview--" + "");
+        Log.v("water", "SaleBillActivity-----recyclerview--" + "");
         sale_bill_recyclerview
                 = (RecyclerView) findViewById(
                 R.id.sale_bill_recycler);
@@ -280,46 +266,43 @@ public class SaleBillActivity extends AppCompatActivity  {
         sale_bill_recyclerview.setLayoutManager(new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false));
         Log.v("water", "SaleBillActivity-----recyclerview setLayoutManager--" + "");
 
-        saleBillAdapter = new SaleBillAdapter(getApplicationContext(),list);
+        saleBillAdapter = new SaleBillAdapter(getApplicationContext(), list);
 
         Log.v("water", "SaleBillActivity-----recyclerview customer_adapter--" + "");
         sale_bill_recyclerview.setAdapter((RecyclerView.Adapter) saleBillAdapter);
         Log.v("water", "SaleBillActivity-----recyclerview setAdapter--" + "");
 
 
-
-
-
     }
-    public void salescounts(){
+
+    public void salescounts() {
         Log.v("water", "-----------SaleBillActivity--------------salescounts---------");
 
 
-        toal_sale=0;
- for (int i=0; i<list.size(); i++){
-    double quant=list.get(i).getQuantity();
-     double amt=list.get(i).getRate();
-     double tax=list.get(i).getTaxrate();
-     double total=(quant*amt*tax/100)+(quant*amt);
+        toal_sale = 0;
+        for (int i = 0; i < list.size(); i++) {
+            double quant = list.get(i).getQuantity();
+            double amt = list.get(i).getRate();
+            double tax = list.get(i).getTaxrate();
+            double total = (quant * amt * tax / 100) + (quant * amt);
 
-     toal_sale=toal_sale+total;
+            toal_sale = toal_sale + total;
         }
 
-        Log.v("water", "-----------SaleBillActivity--------------toal_sale---------"+toal_sale);
+        Log.v("water", "-----------SaleBillActivity--------------toal_sale---------" + toal_sale);
 
-        saleTotal.setText("Net Total :"+String.valueOf(toal_sale));
+        saleTotal.setText("Net Total :" + String.valueOf(toal_sale));
         round_value.setText("0");
         total_amount.setText(String.valueOf(toal_sale));
     }
 
 
+    public void billinsert() {
 
-    public void billinsert(){
 
-
-        SaleBillProductRequest saleBillProductRequest=new SaleBillProductRequest();
-        int i=0;
-        for(ProductList productList:list){
+        SaleBillProductRequest saleBillProductRequest = new SaleBillProductRequest();
+        int i = 0;
+        for (ProductList productList : list) {
 
             saleBillProductRequest.setSaleInvoiceLineId(0);
             saleBillProductRequest.setRowNum(i);
@@ -327,36 +310,36 @@ public class SaleBillActivity extends AppCompatActivity  {
             saleBillProductRequest.setUnitId(productList.getUnit_id());
             saleBillProductRequest.setQty(productList.getQuantity());
             saleBillProductRequest.setUnitPrice(productList.getRate());
-            double amount=productList.getQuantity()*productList.getRate();
+            double amount = productList.getQuantity() * productList.getRate();
             saleBillProductRequest.setAmount(amount);
             saleBillProductRequest.setDiscountPercent(0);
             saleBillProductRequest.setDiscountAmount(0);
             saleBillProductRequest.setTaxPercent(productList.getTaxrate());
-            double tax_amount=productList.getTaxrate()*amount/100;
+            double tax_amount = productList.getTaxrate() * amount / 100;
             saleBillProductRequest.setTaxableAmount(tax_amount);
-            double total=tax_amount+amount;
+            double total = tax_amount + amount;
             saleBillProductRequest.setTotalAmount(total);
             saleBillProductRequest.setStockIssueId(1);
             saleBillProductRequest.setActiveStatus(true);
 
-         //   saleBillProductRequestArray.setTypeSaleLine((List<SaleBillProductRequest>) saleBillProductRequest);
+            //   saleBillProductRequestArray.setTypeSaleLine((List<SaleBillProductRequest>) saleBillProductRequest);
 
             product_request.add(saleBillProductRequest);
         }
-      i++;
+        i++;
 
-        for(SaleBillProductRequest saleBillRequest:product_request){
+        for (SaleBillProductRequest saleBillRequest : product_request) {
             gross_amount = gross_amount + saleBillRequest.getAmount();
-            total_tax=total_tax+saleBillRequest.getTaxableAmount();
-            net_amount=net_amount+saleBillRequest.getTotalAmount();
+            total_tax = total_tax + saleBillRequest.getTaxableAmount();
+            net_amount = net_amount + saleBillRequest.getTotalAmount();
 
         }
-        Log.v("water","ProductSaleActivity---------onResponse-------"+gross_amount);
-        Log.v("water","ProductSaleActivity---------onResponse-------"+total_tax);
-        Log.v("water","ProductSaleActivity---------onResponse-------"+net_amount);
+        Log.v("water", "ProductSaleActivity---------onResponse-------" + gross_amount);
+        Log.v("water", "ProductSaleActivity---------onResponse-------" + total_tax);
+        Log.v("water", "ProductSaleActivity---------onResponse-------" + net_amount);
 
 
-        SaleBillRequest saleBillRequest=new SaleBillRequest();
+        SaleBillRequest saleBillRequest = new SaleBillRequest();
         saleBillRequest.setSaleInvoiceHeadId(0);
         saleBillRequest.setOutboundDeliveryHeadId(1);
         saleBillRequest.setFinYearId(fin_id);
@@ -375,48 +358,46 @@ public class SaleBillActivity extends AppCompatActivity  {
         saleBillRequest.setFinalized(true);
         saleBillRequest.setActiveStatus(true);
         saleBillRequest.setPaymentTermId(pay_id);
+        saleBillRequest.setProductList(product_request);
 
-Call<SaleBillResponseArray> call = RetrofitClientInstance.getSaleBillInterface()
-                .requestbill("Bearer"+" "+token,saleBillRequest,product_request);
+        Call<SaleBillResponseArray> call = RetrofitClientInstance.getSaleBillInterface()
+                .requestbill("Bearer" + " " + token, saleBillRequest);
 
-call.enqueue(new Callback<SaleBillResponseArray>() {
-    @Override
-    public void onResponse(Call<SaleBillResponseArray> call, Response<SaleBillResponseArray> response) {
-        Log.v("water","ProductSaleActivity---------onResponse-------"+response);
+        call.enqueue(new Callback<SaleBillResponseArray>() {
+            @Override
+            public void onResponse(Call<SaleBillResponseArray> call, Response<SaleBillResponseArray> response) {
+                Log.v("water", "ProductSaleActivity---------onResponse-------" + response);
 
 
-        if(response.isSuccessful()) {
-            Log.v("water", "ProductSaleActivity---------isSuccessful-------");
-            List<SaleBillResponse> list = response.body().getResultSet();
-            for(SaleBillResponse saleBillResponse:list){
-                String docno=saleBillResponse.getDocNo();
-                String message=saleBillResponse.getResultText();
-                if(message.equals("Success")){
-                    Snackbar snackbar = Snackbar.make(
-                            (((SaleBillActivity) getApplicationContext()).findViewById(android.R.id.content)),
-                            message + "Sale successfully completed with documentno "+docno, Snackbar.LENGTH_SHORT);
-                    snackbar.show();
+                if (response.isSuccessful()) {
+                    Log.v("water", "ProductSaleActivity---------isSuccessful-------");
+                    List<SaleBillResponse> list = response.body().getResultSet();
+                    for (SaleBillResponse saleBillResponse : list) {
+                        String docno = saleBillResponse.getDocNo();
+                        String message = saleBillResponse.getResultText();
+                        if (message.equals("Success")) {
+                            Snackbar snackbar = Snackbar.make(
+                                    (((SaleBillActivity) getApplicationContext()).findViewById(android.R.id.content)),
+                                    message + "Sale successfully completed with documentno " + docno, Snackbar.LENGTH_SHORT);
+                            snackbar.show();
+                        }
+                    }
+                    Log.v("water", "ProductSaleActivity--------SaleBillResponse------" + list);
+                } else {
+                    Log.v("water", "ProductSaleActivity---------response failed--");
+
                 }
+
             }
-            Log.v("water", "ProductSaleActivity--------SaleBillResponse------"+list);
-        }
-        else {
-            Log.v("water", "ProductSaleActivity---------response failed--");
 
-        }
+            @Override
+            public void onFailure(Call<SaleBillResponseArray> call, Throwable t) {
 
-    }
-
-    @Override
-    public void onFailure(Call<SaleBillResponseArray> call, Throwable t) {
-
-    }
-});
-
+            }
+        });
 
 
     }
-
 
 
 }

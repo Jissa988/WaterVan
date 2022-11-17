@@ -9,7 +9,7 @@ import retrofit2.http.POST;
 
 public interface SaleBillInterface {
     @POST("SalesManagement/InsertUpdateSalesInvoice")
-    Call<SaleBillResponseArray> requestbill(@Header("Authorization") String token, @Body SaleBillRequest saleBillRequest, List<SaleBillProductRequest> TypeSaleLine);
+    Call<SaleBillResponseArray> requestbill(@Header("Authorization") String token, @Body SaleBillRequest saleBillRequest);
 
 }
 //, List<TypeSaleLine> TypeSaleLine

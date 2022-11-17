@@ -1,23 +1,32 @@
 package com.example.watervan.Sale;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SaleBillRequest {
     int SaleInvoiceHeadId;
-   int OutboundDeliveryHeadId;
-   int FinYearId;
-   int StkTrxTypeId;
-   String InvoiceDate;
-   int CustomerId;
-   String Narration;
-   double RoundOff;
-   String RoundOffType;
+    int OutboundDeliveryHeadId;
+    int FinYearId;
+    int StkTrxTypeId;
+    String InvoiceDate;
+    int CustomerId;
+    String Narration;
+    double RoundOff;
+    String RoundOffType;
 
-    double GrossAmount ;
+    double GrossAmount;
     double TotalDiscountPercent;
     double TotalDiscountAmount;
     double TotalTaxAmount;
     double NetAmount;
     double ReceiptType;
     Boolean Finalized;
+    private List<SaleBillProductRequest> TypeSaleLine = new ArrayList();
+
+    public void setProductList(List<SaleBillProductRequest> productList) {
+        TypeSaleLine.clear();
+        TypeSaleLine.addAll(productList);
+    }
 
     public Boolean getFinalized() {
         return Finalized;
@@ -37,9 +46,6 @@ public class SaleBillRequest {
 
     Boolean ActiveStatus;
     int PaymentTermId;
-
-
-
 
 
     public int getSaleInvoiceHeadId() {
@@ -164,9 +170,6 @@ public class SaleBillRequest {
     }
 
 
-
-
-
     public int getPaymentTermId() {
         return PaymentTermId;
     }
@@ -174,13 +177,6 @@ public class SaleBillRequest {
     public void setPaymentTermId(int paymentTermId) {
         PaymentTermId = paymentTermId;
     }
-
-
-
-
-
-
-
 
 
 }
