@@ -33,6 +33,8 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
 
  public static List<ProductList> arraylist=new ArrayList<ProductList>();
+ List <ProductList> poduct_list;
+
 
 
 
@@ -85,7 +87,13 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         Log.v("water", "ProductSale-----onBindViewHolder-------------" );
 
         int position= holder.getAdapterPosition();
+        if(arraylist.size()==0){
+            Log.v("water", "ProductSale-----onBindViewHolder--------if arraylist null-----" );
 
+        }
+else{
+       //     holder.saleedit.setText();
+        }
 
 
         holder.productname.setText((String) pro_list.get(pos).getItemName());
@@ -195,38 +203,67 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
                 if (sale_count > 0) {
                     ProductList productList=new ProductList();
                     Log.v("water", "SaleBillActivity-----onBindViewHolder-------increment_quantity>0---");
+                     //   if(arraylist.size()==0) {
 
-                    productList.setProduct_id(pro_list.get(position).getItemId());
-                    productList.setItem_code(pro_list.get(position).getItemCode());
-                    productList.setProduct_name(pro_list.get(position).getItemName());
-                    productList.setQuantity(sale_count);
-                      productList.setUnit_id(unit_list.get(position).getUnitId());
-                      String price_text= String.valueOf(holder.productrate.getText());
-                    String[] parts = price_text.split("Rate-");
-                    String price_rate=parts[1];
-                    Log.v("water", "SaleBillActivity-----price_rate----" + price_rate);
-                    String[] parts1 = price_rate.split("AED");
-                    //String price=parts1[0];
-                   double price = Double.parseDouble(parts1[0]); // 004
-                    Log.v("water", "SaleBillActivity-----price----" + price);
+                            productList.setProduct_id(pro_list.get(position).getItemId());
+                            productList.setItem_code(pro_list.get(position).getItemCode());
+                            productList.setProduct_name(pro_list.get(position).getItemName());
+                            productList.setQuantity(sale_count);
+                            productList.setUnit_id(unit_list.get(position).getUnitId());
+                            String price_text = String.valueOf(holder.productrate.getText());
+                            String[] parts = price_text.split("Rate-");
+                            String price_rate = parts[1];
+                            Log.v("water", "SaleBillActivity-----price_rate----" + price_rate);
+                            String[] parts1 = price_rate.split("AED");
+                            //String price=parts1[0];
+                            double price = Double.parseDouble(parts1[0]); // 004
+                            Log.v("water", "SaleBillActivity-----price----" + price);
 
-                      productList.setRate(price);
+                            productList.setRate(price);
 
-                    productList.setTaxid(pro_list.get(position).getTaxId());
-                    productList.setTaxrate(pro_list.get(position).getTaxRate());
-
-
-                   arraylist.add(productList.getArray_pos(),productList);
-
-                    Log.v("water", "SaleBillActivity-----productList- >0 -----getProduct_id----" + pro_list.get(pos).getItemId());
-                    Log.v("water", "SaleBillActivity-----productList--- >0 ---getProduct_id----" + pro_list.get(pos).getItemName());
+                            productList.setTaxid(pro_list.get(position).getTaxId());
+                            productList.setTaxrate(pro_list.get(position).getTaxRate());
 
 
-                    Log.v("water", "SaleBillActivity-----onBindViewHolder-------    listArray.getProductListList();---" );
-                  //  Toast.makeText(context, "Added successfully", Toast.LENGTH_LONG).show();
+                            arraylist.add(productList.getArray_pos(), productList);
 
-                    Snackbar snackbar = Snackbar.make(view, "Added successfully",Snackbar.LENGTH_SHORT);
-                    snackbar.show();
+                            Snackbar snackbar = Snackbar.make(view, "Added successfully", Snackbar.LENGTH_SHORT);
+                            snackbar.show();
+                      //  }
+                      //  else{
+                       //     for(int i=0;i<arraylist.size();i++){
+                       //         if(pro_list.get(position).getItemId()==productList.getProduct_id()){
+//                                    productList.setQuantity(sale_count);
+//                                    arraylist.add(productList.getArray_pos(), productList);
+//                                    Snackbar snackbar = Snackbar.make(view, "Added successfully", Snackbar.LENGTH_SHORT);
+//                                    snackbar.show();
+//                                }
+//                                else{
+//                                    productList.setProduct_id(pro_list.get(position).getItemId());
+//                                    productList.setItem_code(pro_list.get(position).getItemCode());
+//                                    productList.setProduct_name(pro_list.get(position).getItemName());
+//                                    productList.setQuantity(sale_count);
+//                                    productList.setUnit_id(unit_list.get(position).getUnitId());
+//                                    String price_text = String.valueOf(holder.productrate.getText());
+//                                    String[] parts = price_text.split("Rate-");
+//                                    String price_rate = parts[1];
+//                                    Log.v("water", "SaleBillActivity-----price_rate----" + price_rate);
+//                                    String[] parts1 = price_rate.split("AED");
+//                                    //String price=parts1[0];
+//                                    double price = Double.parseDouble(parts1[0]); // 004
+//                                    Log.v("water", "SaleBillActivity-----price----" + price);
+//
+//                                    productList.setRate(price);
+//
+//                                    productList.setTaxid(pro_list.get(position).getTaxId());
+//                                    productList.setTaxrate(pro_list.get(position).getTaxRate());
+//
+//
+//                                    arraylist.add(productList.getArray_pos(), productList);
+//
+//                                }
+//                            }
+//                        }
 
                 }
                 else if(sale_count==0){

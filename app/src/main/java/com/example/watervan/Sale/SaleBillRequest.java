@@ -10,16 +10,37 @@ public class SaleBillRequest {
    String Narration;
    double RoundOff;
    String RoundOffType;
-   int WarehouseId;
-   double GrossAmount ;
-   double TotalDiscountPercent;
-   double TotalDiscountAmount;
-   double TotalTaxAmount;
-   double NetAmount;
-   double ReceiptType;
-   String Finalized;
-   String ActiveStatus;
+
+    double GrossAmount ;
+    double TotalDiscountPercent;
+    double TotalDiscountAmount;
+    double TotalTaxAmount;
+    double NetAmount;
+    double ReceiptType;
+    Boolean Finalized;
+
+    public Boolean getFinalized() {
+        return Finalized;
+    }
+
+    public void setFinalized(Boolean finalized) {
+        Finalized = finalized;
+    }
+
+    public Boolean getActiveStatus() {
+        return ActiveStatus;
+    }
+
+    public void setActiveStatus(Boolean activeStatus) {
+        ActiveStatus = activeStatus;
+    }
+
+    Boolean ActiveStatus;
     int PaymentTermId;
+
+
+
+
 
     public int getSaleInvoiceHeadId() {
         return SaleInvoiceHeadId;
@@ -33,7 +54,7 @@ public class SaleBillRequest {
         return OutboundDeliveryHeadId;
     }
 
-    public void setOutboundDeliveryHeadId(int outboundDeliveryHeadId) {
+    public void setOutboundDeliveryHeadId(Integer outboundDeliveryHeadId) {
         OutboundDeliveryHeadId = outboundDeliveryHeadId;
     }
 
@@ -93,13 +114,6 @@ public class SaleBillRequest {
         RoundOffType = roundOffType;
     }
 
-    public int getWarehouseId() {
-        return WarehouseId;
-    }
-
-    public void setWarehouseId(int warehouseId) {
-        WarehouseId = warehouseId;
-    }
 
     public double getGrossAmount() {
         return GrossAmount;
@@ -149,21 +163,9 @@ public class SaleBillRequest {
         ReceiptType = receiptType;
     }
 
-    public String getFinalized() {
-        return Finalized;
-    }
 
-    public void setFinalized(String finalized) {
-        Finalized = finalized;
-    }
 
-    public String getActiveStatus() {
-        return ActiveStatus;
-    }
 
-    public void setActiveStatus(String activeStatus) {
-        ActiveStatus = activeStatus;
-    }
 
     public int getPaymentTermId() {
         return PaymentTermId;

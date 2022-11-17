@@ -7,12 +7,12 @@
     android:orientation="vertical"
     android:background="@color/white"
     tools:context=".Sale.SaleBillActivity"
-    android:weightSum="3">
+    >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_weight="0.1">
+        >
 
     <TextView
         android:layout_width="match_parent"
@@ -35,7 +35,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="2.8">
+        android:layout_weight="1">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -50,14 +50,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:weightSum="8"
+android:weightSum="10"
             android:padding="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_weight="3"
+                android:layout_weight="1"
                 android:weightSum="3"
                 >
                 <TextView
@@ -204,6 +204,7 @@
             </view>
 <androidx.recyclerview.widget.RecyclerView
     android:layout_width="match_parent"
+android:layout_weight="1"
     android:layout_height="200dp"
     android:id="@+id/sale_bill_recycler">
 
@@ -233,11 +234,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
+                android:layout_weight="1"
                 android:weightSum="2">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+
+                    android:layout_gravity="bottom"
                     android:text="Round off">
 
                 </TextView>
@@ -247,26 +251,32 @@
                     android:weightSum="2"
                     android:layout_weight="1">
                     <Spinner
+                        android:id="@+id/round_spinner"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_weight="1">
+                        tools:ignore="XmlNamespace"
+                        android:scaleType="fitXY"
+                        android:layout_weight="1"
+                        android:textStyle="bold"
+                        android:gravity="left"
+                        android:textSize="0.5sp"
+                        android:layout_gravity="center_vertical"
+                        >
 
                     </Spinner>
 
                     <EditText
                         android:id="@+id/round_amount"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
+                        android:layout_height="30dp"
+                        android:layout_weight="1"
+                        android:maxLines="1"
+                        android:layout_gravity="bottom"
+
+                        android:inputType="numberDecimal">
 
                     </EditText>
-<!--<Button-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="wrap_content"-->
-<!--    android:layout_weight="1"-->
-<!--    >-->
 
-<!--</Button>-->
 
                 </LinearLayout>
 
@@ -278,13 +288,15 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginTop="10dp"
+                android:layout_weight="1"
                 android:weightSum="2"
-                android:layout_marginBottom="10dp">
+                >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Total amount"
-                    android:layout_weight="1">
+                    android:layout_weight="1"
+                    android:layout_marginBottom="10dp">
 
                 </TextView>
                 <TextView
@@ -293,6 +305,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_weight="1"
+                    android:layout_marginBottom="10dp"
                     >
 
                 </TextView>
@@ -307,7 +320,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:orientation="horizontal"
-        android:layout_weight="0.1"
+
         android:weightSum="2">
 
         <Button
