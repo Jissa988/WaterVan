@@ -1,5 +1,7 @@
 package com.example.watervan.Sale;
 
+import java.util.ArrayList;
+
 public class SaleBillRequest {
     int SaleInvoiceHeadId;
    int OutboundDeliveryHeadId;
@@ -18,6 +20,7 @@ public class SaleBillRequest {
     double NetAmount;
     double ReceiptType;
     Boolean Finalized;
+
 
     public Boolean getFinalized() {
         return Finalized;

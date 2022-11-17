@@ -376,6 +376,7 @@ public class SaleBillActivity extends AppCompatActivity  {
         saleBillRequest.setActiveStatus(true);
         saleBillRequest.setPaymentTermId(pay_id);
 
+
 Call<SaleBillResponseArray> call = RetrofitClientInstance.getSaleBillInterface()
                 .requestbill("Bearer"+" "+token,saleBillRequest,product_request);
 
