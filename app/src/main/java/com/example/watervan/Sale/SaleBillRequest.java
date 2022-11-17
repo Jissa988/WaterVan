@@ -1,5 +1,7 @@
 package com.example.watervan.Sale;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,11 +23,12 @@ public class SaleBillRequest {
     double NetAmount;
     double ReceiptType;
     Boolean Finalized;
-    private List<SaleBillProductRequest> TypeSaleLine = new ArrayList();
+    @SerializedName("TypeSaleLine")
+    private List<SaleBillProductRequest> productList = new ArrayList();
 
     public void setProductList(List<SaleBillProductRequest> productList) {
-        TypeSaleLine.clear();
-        TypeSaleLine.addAll(productList);
+        this.productList.clear();
+        this.productList.addAll(productList);
     }
 
     public Boolean getFinalized() {

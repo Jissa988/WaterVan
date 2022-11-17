@@ -183,14 +183,15 @@ public class SaleBillActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Log.v("water", "SaleBillActivity----onBackPressed-------------");
 
-                Intent intent = new Intent(SaleBillActivity.this, ProductSaleActivity.class);
+              /*  Intent intent = new Intent(SaleBillActivity.this, ProductSaleActivity.class);
                 intent.putExtra("custid", cust_id);
                 intent.putExtra("fincialid", fin_id);
                 intent.putExtra("strx_id", strx_id);
                 intent.putExtra("payid", pay_id);
 
 
-                startActivity(intent);
+                startActivity(intent);*/
+                finish();
             }
         });
 
