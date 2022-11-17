@@ -97,10 +97,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
-                android:layout_weight="1"
-
-                >
-
+                android:layout_weight="1">
 
                 <ImageView
                     android:id="@+id/imageView"
@@ -113,21 +110,18 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/ic_baseline_shopping_cart_24" />
 
-                <com.nex3z.notificationbadge.NotificationBadge
-                    android:id="@+id/badge"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_gravity="right"
+                <TextView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/notification_count_badge_bg"
+                    android:gravity="center"
+                    android:id="@+id/tvProductCount"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                    app:layout_constraintEnd_toEndOf="@+id/imageView"
+                    app:layout_constraintTop_toBottomOf="@+id/imageView"
+                    tools:text="2" />
 
-                    android:layout_marginTop="5dp"
-                    android:layout_marginEnd="8dp"
-                    android:textSize="15sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:nbBackground="@drawable/badgeicon"
-                    app:nbMaxTextLength="2" />
             </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
 
