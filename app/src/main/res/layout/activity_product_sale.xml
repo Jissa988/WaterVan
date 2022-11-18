@@ -111,11 +111,12 @@
                     app:srcCompat="@drawable/ic_baseline_shopping_cart_24" />
 
                 <TextView
+                    android:id="@+id/tvProductCount"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:background="@drawable/notification_count_badge_bg"
                     android:gravity="center"
-                    android:id="@+id/tvProductCount"
+                  android:layout_marginRight="5dp"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="@+id/imageView"
                     app:layout_constraintEnd_toEndOf="@+id/imageView"

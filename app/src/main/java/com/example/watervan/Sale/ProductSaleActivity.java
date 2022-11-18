@@ -59,7 +59,7 @@ public class ProductSaleActivity extends AppCompatActivity implements ProductIte
         token = tokenSharedPreference.Gettoken();
         search = findViewById(R.id.edit_searchs);
         count=findViewById(R.id.tvProductCount);
-
+        count.setText("0");
         cust_id = (getIntent().getExtras().getInt("custid"));
         fin_id = (getIntent().getExtras().getInt("fincialid"));
         strx_id = (getIntent().getExtras().getInt("strx_id"));
@@ -238,8 +238,8 @@ public class ProductSaleActivity extends AppCompatActivity implements ProductIte
 
 
     @Override
-    public void onAddItemClicked(int index) {
-count.setText(index);
-        System.out.println("pos: "+index);
+    public void onAddItemClicked(int arraysize) {
+        count.setText(String.valueOf(arraysize));
+        System.out.println("pos: "+arraysize);
     }
 }
