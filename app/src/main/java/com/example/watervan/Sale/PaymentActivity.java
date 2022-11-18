@@ -70,8 +70,7 @@ public class PaymentActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-//                Intent intent = new Intent(context, PaymentActivity.class);
-//                context.startActivity(intent);
+                finish();
             }
         });
 

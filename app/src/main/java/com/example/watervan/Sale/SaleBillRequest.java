@@ -23,11 +23,13 @@ public class SaleBillRequest {
     double NetAmount;
     double ReceiptType;
     Boolean Finalized;
+    Boolean ActiveStatus;
+    int PaymentTermId;
     @SerializedName("TypeSaleLine")
     private List<SaleBillProductRequest> productList = new ArrayList();
 
     public void setProductList(List<SaleBillProductRequest> productList) {
-        this.productList.clear();
+       // this.productList.clear();
         this.productList.addAll(productList);
     }
 
@@ -46,10 +48,6 @@ public class SaleBillRequest {
     public void setActiveStatus(Boolean activeStatus) {
         ActiveStatus = activeStatus;
     }
-
-    Boolean ActiveStatus;
-    int PaymentTermId;
-
 
     public int getSaleInvoiceHeadId() {
         return SaleInvoiceHeadId;

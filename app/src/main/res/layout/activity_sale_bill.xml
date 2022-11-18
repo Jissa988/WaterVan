@@ -7,11 +7,13 @@
     android:orientation="vertical"
     android:background="@color/white"
     tools:context=".Sale.SaleBillActivity"
+    android:weightSum="3"
     >
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_weight="1"
         >
 
     <TextView
@@ -240,8 +242,7 @@ android:layout_weight="1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-
-                    android:layout_gravity="bottom"
+                    android:layout_gravity="center_vertical"
                     android:text="Round off">
 
                 </TextView>
@@ -268,12 +269,13 @@ android:layout_weight="1"
                     <EditText
                         android:id="@+id/round_amount"
                         android:layout_width="match_parent"
-                        android:layout_height="30dp"
+                        android:layout_height="40dp"
                         android:layout_weight="1"
                         android:maxLines="1"
-                        android:layout_gravity="bottom"
-
-                        android:inputType="numberDecimal">
+                        android:textSize="10dp"
+                        android:text="0"
+                        android:layout_gravity="center_vertical"
+                     android:inputType="numberDecimal">
 
                     </EditText>
 
@@ -320,7 +322,7 @@ android:layout_weight="1"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:orientation="horizontal"
-
+        android:layout_weight="1"
         android:weightSum="2">
 
         <Button

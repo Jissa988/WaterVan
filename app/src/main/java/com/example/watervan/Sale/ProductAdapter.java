@@ -53,9 +53,10 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         this.callback=callback;
         // arraylist.clear();
         //<pro_list.size()
-        for (int i = 0; i == 5; i++) {
+        for (int i = 0; i<pro_list.size(); i++) {
             ProductList productList = new ProductList();
 
+            Log.v("water", "ProductSaleActivity-----ProductViewHolder-----i--------"+i);
             productList.setProduct_id(pro_list.get(i).getItemId());
             productList.setProduct_name(pro_list.get(i).getItemName());
             productList.setQuantity(0);
@@ -194,7 +195,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.additem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                callback.onAddItemClicked(pos);
+
                 int sale_count = Integer.parseInt(holder.saleedit.getText().toString());
 
 
@@ -228,13 +229,15 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
                         Snackbar snackbar = Snackbar.make(view, "Added successfully", Snackbar.LENGTH_SHORT);
                         snackbar.show();
                     } else {
-                        for (int i = 0; i < arraylist.size(); i++) {
+                        for (int i = 0; i <=arraylist.size(); i++) {
                             if (pro_list.get(position).getItemId() == productList.getProduct_id()) {
                                 System.out.println("prod if: "+pro_list.get(position).getItemId()+", "+productList.getProduct_id());
                                 productList.setQuantity(sale_count);
-                                arraylist.set(productList.getArray_pos(), productList);
-//                                arraylist.add(productList.getArray_pos(), productList);
-                                Snackbar snackbar = Snackbar.make(view, "Added successfully", Snackbar.LENGTH_SHORT);
+                                Log.v("water", "SaleBillActivity-----productList.getArray_pos()----" +productList.getArray_pos());
+
+                               arraylist.set(productList.getArray_pos(),productList);
+
+                                Snackbar snackbar = Snackbar.make(view, "updated successfully", Snackbar.LENGTH_SHORT);
                                 snackbar.show();
                             } else {
                                 System.out.println("prod else: "+pro_list.get(position).getItemId()+", "+productList.getProduct_id());
@@ -259,16 +262,19 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
 
                                 arraylist.add(productList.getArray_pos(), productList);
-
+                                Snackbar snackbar = Snackbar.make(view, "added successfully", Snackbar.LENGTH_SHORT);
+                                snackbar.show();
                             }
                         }
                     }
+
 
                 } else if (sale_count == 0) {
                     Toast.makeText(context, "Please add minimum one quantity before add item", Toast.LENGTH_LONG).show();
 
                 }
                 arraylist.size();
+            //   callback.onAddItemClicked(arraylist.size());
                 Log.v("water", "SaleBillActivity-----onBindViewHolder-------        arraylist.size();---" + arraylist.size());
 
 

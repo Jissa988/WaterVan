@@ -53,20 +53,15 @@ public class CustomerAdapter extends RecyclerView.Adapter<CustomerAdapter.Custom
         holder.cphn.setText((String) cust_list.get(position).getCompanyPhone());
         holder.croute.setText((String) cust_list.get(position).getOfficeAddress());
         holder.camount.setText((String) cust_list.get(position).getOutstandingAmount());
-        //holder.custs_id.setText((String) cust_ids.get(position));
 
-String name=cust_list.get(position).getCustomerName();
-String phone=cust_list.get(position).getCompanyPhone();
-String route=cust_list.get(position).getOfficeAddress();
-int customer_id=cust_list.get(position).getCustomerId();
+        int customer_id=cust_list.get(position).getCustomerId();
         holder.sale.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
             ProductAdapter.arraylist.clear();
+            SaleBillActivity.product_request.clear();
 
                 Intent intent = new Intent(context, PaymentActivity.class);
-//                intent.putExtra("custname",name);
-//                intent.putExtra("custphone",phone);
-//                intent.putExtra("custroute",route);
+
                 intent.putExtra("cust_id",customer_id);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(intent);

@@ -49,6 +49,7 @@ public class ProductSaleActivity extends AppCompatActivity implements ProductIte
 
     List<SalesResponse> custemer;
     List<ProductList> product;
+    TextView count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,14 +58,13 @@ public class ProductSaleActivity extends AppCompatActivity implements ProductIte
         tokenSharedPreference = new TokenSharedPreference(this);
         token = tokenSharedPreference.Gettoken();
         search = findViewById(R.id.edit_searchs);
-        //  cart=findViewById(R.id.cartcont);
-
-        //  notificationBadge.setNumber(2);
+        count=findViewById(R.id.tvProductCount);
 
         cust_id = (getIntent().getExtras().getInt("custid"));
         fin_id = (getIntent().getExtras().getInt("fincialid"));
         strx_id = (getIntent().getExtras().getInt("strx_id"));
         pay_id = (getIntent().getExtras().getInt("payid"));
+
 
 //        cust_id=1;
 //        fin_id=1;
@@ -85,8 +85,7 @@ public class ProductSaleActivity extends AppCompatActivity implements ProductIte
         back.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-//                Intent intent = new Intent(context, PaymentActivity.class);
-//                context.startActivity(intent);
+                finish();
             }
         });
 
@@ -94,10 +93,10 @@ public class ProductSaleActivity extends AppCompatActivity implements ProductIte
             public void onClick(View v) {
 
                 Intent intent = new Intent(ProductSaleActivity.this, SaleBillActivity.class);
-                intent.putExtra("custid", cust_id);
-                intent.putExtra("finid", fin_id);
-                intent.putExtra("strxid", strx_id);
-                intent.putExtra("payid", pay_id);
+                intent.putExtra("custid",cust_id);
+                intent.putExtra("finid",fin_id);
+                intent.putExtra("strxid",strx_id);
+                intent.putExtra("payid",pay_id);
 
                 startActivity(intent);
 
@@ -240,6 +239,7 @@ public class ProductSaleActivity extends AppCompatActivity implements ProductIte
 
     @Override
     public void onAddItemClicked(int index) {
+count.setText(index);
         System.out.println("pos: "+index);
     }
 }

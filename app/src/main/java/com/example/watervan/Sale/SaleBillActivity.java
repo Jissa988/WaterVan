@@ -53,10 +53,8 @@ public class SaleBillActivity extends AppCompatActivity {
     String date;
     String round_offtype;
     double gross_amount = 0, total_tax = 0, net_amount = 0, round_amount = 0;
-    List<SaleBillProductRequest> product_request = new ArrayList<>();
-    SaleBillProductRequestArray saleBillProductRequestArray;
-//    List<SalesResponse> custemer;
-//    List<ProductList> product;
+  public static List<SaleBillProductRequest> product_request = new ArrayList<>();
+
 
 
     @Override
@@ -100,6 +98,7 @@ public class SaleBillActivity extends AppCompatActivity {
 
 
         list = ProductAdapter.arraylist;
+
         custview = SalesActivity.customerlist;
         if (custview.isEmpty()) {
             Log.v("water", "-------------------------SaleBillActivity-----custview is empty----");
@@ -136,7 +135,7 @@ public class SaleBillActivity extends AppCompatActivity {
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_dropdown_item, list);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
-        round_offtype = spinner.getSelectedItem().toString();
+
 
 
         recyclerviews();
@@ -148,7 +147,7 @@ public class SaleBillActivity extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                billinsert();
+                billinsert(view);
             }
         });
 
@@ -183,14 +182,7 @@ public class SaleBillActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Log.v("water", "SaleBillActivity----onBackPressed-------------");
 
-              /*  Intent intent = new Intent(SaleBillActivity.this, ProductSaleActivity.class);
-                intent.putExtra("custid", cust_id);
-                intent.putExtra("fincialid", fin_id);
-                intent.putExtra("strx_id", strx_id);
-                intent.putExtra("payid", pay_id);
 
-
-                startActivity(intent);*/
                 finish();
             }
         });
@@ -205,11 +197,18 @@ public class SaleBillActivity extends AppCompatActivity {
                 String[] parts = nettotal_string.split("Net Total :");
                 double net_rate = Double.parseDouble(parts[1]);
                 if (round_offtype.equals("+")) {
-                    net_amount = round_amount + net_rate;
+                    toal_sale = round_amount + net_rate;
                 } else if (round_offtype.equals("-")) {
-                    net_amount = net_rate - round_amount;
+                    toal_sale = net_rate - round_amount;
                 }
-
+                total_amount.setText(String.valueOf(toal_sale));
+               String round_offtype1 = spinner.getSelectedItem().toString();
+               if(round_offtype1.equals("+")){
+                   round_offtype="D";
+               }
+               else if(round_offtype1.equals("-")){
+                    round_offtype="c";
+                }
 
             }
 
@@ -231,19 +230,34 @@ public class SaleBillActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
+                if (String.valueOf(s).equals("")) {
 
+                    round_offtype = spinner.getSelectedItem().toString();
+                    round_amount =0;
+                    String nettotal_string = String.valueOf(saleTotal.getText());
+                    String[] parts = nettotal_string.split("Net Total :");
+                    double net_rate = Double.parseDouble(parts[1]);
+                    if (round_offtype.equals("+")) {
+                        toal_sale = round_amount + net_rate;
+                    } else if (round_offtype.equals("-")) {
+                        toal_sale = net_rate - round_amount;
+                    }
+                    total_amount.setText(String.valueOf(toal_sale));
 
-                round_offtype = spinner.getSelectedItem().toString();
-                round_amount = Double.parseDouble(String.valueOf(s));
-                String nettotal_string = String.valueOf(saleTotal.getText());
-                String[] parts = nettotal_string.split("Net Total :");
-                double net_rate = Double.parseDouble(parts[1]);
-                if (round_offtype.equals("+")) {
-                    net_amount = round_amount + net_rate;
-                } else if (round_offtype.equals("-")) {
-                    net_amount = net_rate - round_amount;
+                } else {
+                    round_offtype = spinner.getSelectedItem().toString();
+                    round_amount = Double.parseDouble(String.valueOf(s));
+                    String nettotal_string = String.valueOf(saleTotal.getText());
+                    String[] parts = nettotal_string.split("Net Total :");
+                    double net_rate = Double.parseDouble(parts[1]);
+                    if (round_offtype.equals("+")) {
+                        toal_sale = round_amount + net_rate;
+                    } else if (round_offtype.equals("-")) {
+                        toal_sale = net_rate - round_amount;
+                    }
+                    total_amount.setText(String.valueOf(toal_sale));
+
                 }
-
             }
         });
 
@@ -298,15 +312,16 @@ public class SaleBillActivity extends AppCompatActivity {
     }
 
 
-    public void billinsert() {
+    public void billinsert(View view ) {
 
 
         SaleBillProductRequest saleBillProductRequest = new SaleBillProductRequest();
-        int i = 0;
-        for (ProductList productList : list) {
 
+        Log.v("water", "ProductSaleActivity---------list.size()-------" + list.size());
+        for (ProductList productList : list) {
+            Log.v("water", "ProductSaleActivity---------productList.getArray_pos()-------" + productList.getArray_pos());
             saleBillProductRequest.setSaleInvoiceLineId(0);
-            saleBillProductRequest.setRowNum(i);
+            saleBillProductRequest.setRowNum(productList.getArray_pos());
             saleBillProductRequest.setItemId(productList.getProduct_id());
             saleBillProductRequest.setUnitId(productList.getUnit_id());
             saleBillProductRequest.setQty(productList.getQuantity());
@@ -322,12 +337,9 @@ public class SaleBillActivity extends AppCompatActivity {
             saleBillProductRequest.setTotalAmount(total);
             saleBillProductRequest.setStockIssueId(1);
             saleBillProductRequest.setActiveStatus(true);
-
-            //   saleBillProductRequestArray.setTypeSaleLine((List<SaleBillProductRequest>) saleBillProductRequest);
-
-            product_request.add(saleBillProductRequest);
+         product_request.add(saleBillProductRequest);
         }
-        i++;
+
 
         for (SaleBillProductRequest saleBillRequest : product_request) {
             gross_amount = gross_amount + saleBillRequest.getAmount();
@@ -349,6 +361,15 @@ public class SaleBillActivity extends AppCompatActivity {
         saleBillRequest.setCustomerId(cust_id);
         saleBillRequest.setNarration("");
         saleBillRequest.setRoundOff(round_amount);
+
+        String round_offtype1 = spinner.getSelectedItem().toString();
+        if(round_offtype1.equals("+")){
+            round_offtype="D";
+        }
+        else if(round_offtype1.equals("-")){
+            round_offtype="C";
+        }
+
         saleBillRequest.setRoundOffType(round_offtype);
         saleBillRequest.setGrossAmount(gross_amount);
         saleBillRequest.setTotalDiscountPercent(0);
@@ -377,10 +398,11 @@ public class SaleBillActivity extends AppCompatActivity {
                         String docno = saleBillResponse.getDocNo();
                         String message = saleBillResponse.getResultText();
                         if (message.equals("Success")) {
-                            Snackbar snackbar = Snackbar.make(
-                                    (((SaleBillActivity) getApplicationContext()).findViewById(android.R.id.content)),
-                                    message + "Sale successfully completed with documentno " + docno, Snackbar.LENGTH_SHORT);
+
+
+                            Snackbar snackbar = Snackbar.make(view, "Sale successfully completed with documentno " + docno, Snackbar.LENGTH_SHORT);
                             snackbar.show();
+
                         }
                     }
                     Log.v("water", "ProductSaleActivity--------SaleBillResponse------" + list);

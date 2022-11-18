@@ -8,7 +8,7 @@ import retrofit2.http.Header;
 import retrofit2.http.POST;
 
 public interface SaleBillInterface {
-    @POST("SalesManagement/InsertUpdateSalesInvoice")
+    @POST("SalesMangement/InsertUpdateSalesInvoice")
     Call<SaleBillResponseArray> requestbill(@Header("Authorization") String token, @Body SaleBillRequest saleBillRequest);
 
 }
