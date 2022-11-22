@@ -50,7 +50,7 @@ public class SaleBillAdapter  extends RecyclerView.Adapter<SaleBillAdapter.SaleB
 
 //        holder.setIsRecyclable(true);
 
-        holder.productname.setText((String) bill_list.get(position).getItem_code());
+        holder.productname.setText((String) bill_list.get(position).getProduct_name());
         holder.quantity.setText((String) String.valueOf(bill_list.get(position).getQuantity()));
         holder.rates.setText((String) String.valueOf(bill_list.get(position).getRate()));
         holder.tax.setText((String) String.valueOf(bill_list.get(position).getTaxrate()));
